@@ -18,46 +18,58 @@ public class Client{
 	BufferedWriter bufferedWriter  =null;
 	
 	try {
-		socket = new Socket ("localhost",12345);
+		//ip address of server,tcp port
+		socket = new Socket ("localhost",1234);
+		
+		//Read from the server and optput to the server
 		inputStreamReader = new InputStreamReader(socket.getInputStream());
 		outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
 		
+		//Make more efficient by reading more than one character at a time
 		bufferedReader = new BufferedReader(inputStreamReader);
 		bufferedWriter = new BufferedWriter(outputStreamWriter);
 		
-		Scanner scanner = new Scanner (System.in);
+
+		/*
+		 * while loop will run infinitely,
+		 * it will break only if msgsToSend
+		 * is BYE.
+		 */
 		while(true) {
+			
+			Scanner scanner = new Scanner (System.in);
+
+			//Read from the keyboard
 			String msgtoSend = scanner.nextLine();
+			
+			
 			bufferedWriter.write(msgtoSend);
 			bufferedWriter.newLine();
 			bufferedWriter.flush();
 			
-			System.out.println("Server :"+bufferedReader.readLine());
-			
+			System.out.println("Server :"+bufferedReader.readLine());		
 			if(msgtoSend.equalsIgnoreCase("BYE"));
 				break;
 		}
-	}catch(IOException e) {
-		e.printStackTrace();
-	}finally {
-		try {
-			if(socket != null)
-				socket.close();
-			if(inputStreamReader != null)
-				inputStreamReader.close();
-			if(outputStreamWriter != null)
-				outputStreamWriter.close();
-			if(bufferedReader != null)
-				bufferedReader.close();
-			if(bufferedWriter != null)
-				bufferedWriter.close();
-		}catch (IOException e) {
+		}catch(IOException e){
 			e.printStackTrace();
-			
-			
-		}	
-	}			
 		
-    }
-	
+		}finally{
+			try {
+				if(socket != null)
+					socket.close();
+				if(inputStreamReader != null)
+					inputStreamReader.close();
+				if(outputStreamWriter != null)
+					outputStreamWriter.close();
+				if(bufferedReader != null)
+					bufferedReader.close();
+				if(bufferedWriter != null)
+					bufferedWriter.close();
+			
+			}catch(IOException e){
+				e.printStackTrace();
+			}	
+		}			
+	}	
 }	

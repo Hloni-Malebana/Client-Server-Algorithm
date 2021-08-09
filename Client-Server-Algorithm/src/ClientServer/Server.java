@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -18,8 +19,10 @@ public class Server{
 	BufferedReader bufferedReader = null;
 	BufferedWriter bufferedWriter  =null;
 	ServerSocket serverSocket = null;
+
 	
-	serverSocket = new ServerSocket(12345);
+	serverSocket = new ServerSocket(1234);
+	
 	while(true) {
 		try {
 		socket = serverSocket.accept();
@@ -40,20 +43,20 @@ public class Server{
 						
 			if(msgFromClient.equalsIgnoreCase("BYE"));
 			break;
-		}
-		socket.close();
-		inputStreamReader.close();
-		outputStreamWriter.close();
-		bufferedReader.close();
-		bufferedWriter.close();
-		serverSocket.close();
+			}
+			socket.close();
+			inputStreamReader.close();
+			outputStreamWriter.close();
+			bufferedReader.close();
+			bufferedWriter.close();
+			//serverSocket.close();
 		
-		}catch(IOException e) {
-			e.printStackTrace();
+			}catch(IOException e) {
+				e.printStackTrace();
 
-		}	
+			}	
+		}
 	}
-}
 }
 
 

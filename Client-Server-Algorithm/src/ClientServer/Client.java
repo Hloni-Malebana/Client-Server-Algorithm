@@ -30,6 +30,7 @@ public class Client{
 		bufferedWriter = new BufferedWriter(outputStreamWriter);
 		
 		Scanner scanner = new Scanner (System.in);
+		
 		/*
 		 * while loop will run infinitely,
 		 * it will break only if msgsToSend

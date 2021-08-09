@@ -29,7 +29,7 @@ public class Client{
 		bufferedReader = new BufferedReader(inputStreamReader);
 		bufferedWriter = new BufferedWriter(outputStreamWriter);
 		
-
+		Scanner scanner = new Scanner (System.in);
 		/*
 		 * while loop will run infinitely,
 		 * it will break only if msgsToSend
@@ -37,7 +37,7 @@ public class Client{
 		 */
 		while(true) {
 			
-			Scanner scanner = new Scanner (System.in);
+
 
 			//Read from the keyboard
 			String msgtoSend = scanner.nextLine();

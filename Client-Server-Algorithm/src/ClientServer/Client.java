@@ -18,10 +18,10 @@ public class Client{
 	BufferedWriter bufferedWriter  =null;
 	
 	try {
-		//ip address of server,tcp port
+		//ip address of server,tcp port 
 		socket = new Socket ("localhost",1234);
 		
-		//Read from the server and optput to the server
+		//Read from the server and output to the server
 		inputStreamReader = new InputStreamReader(socket.getInputStream());
 		outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
 		

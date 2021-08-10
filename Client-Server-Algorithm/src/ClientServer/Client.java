@@ -30,7 +30,7 @@ public class Client{
 		bufferedWriter = new BufferedWriter(outputStreamWriter);
 		
 		Scanner scanner = new Scanner (System.in);
-		
+		int count = 0;
 		/*
 		 * while loop will run infinitely,
 		 * it will break only if msgsToSend
@@ -38,17 +38,29 @@ public class Client{
 		 */
 		while(true) {
 			
-
-
 			//Read from the keyboard
 			String msgtoSend = scanner.nextLine();
 			
-			
+			/* Use buffered writer to send user input
+			 * to the server.
+			 */
 			bufferedWriter.write(msgtoSend);
 			bufferedWriter.newLine();
+			
+			/*
+			 * If I remove line 54,the user can continue
+			 * to put user inputs.But the user inputs
+			 * are not sent to the server.
+			 */
+			
 			bufferedWriter.flush();
 			
+			/*
+			 * Read the message entered by the server and enter
+			 * and print it to the screen on the client pc.
+			 */
 			System.out.println("Server :"+bufferedReader.readLine());		
+			//I think this is where the bug resides
 			if(msgtoSend.equalsIgnoreCase("BYE"));
 				break;
 		}

@@ -21,7 +21,7 @@ public class Client{
 	while(true) {
 	
 		try {
-			// IP   address of server,port 1234.
+			// IP  address of server,port 1234.
 		
 			socket = new Socket ("localhost",1234);		
 			

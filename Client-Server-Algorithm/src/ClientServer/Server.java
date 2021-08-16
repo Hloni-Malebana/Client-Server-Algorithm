@@ -49,7 +49,6 @@ public class Server{
 			outputStreamWriter.close();
 			bufferedReader.close();
 			bufferedWriter.close();
-			//serverSocket.close();
 		
 			}catch(IOException e) {
 				e.printStackTrace();

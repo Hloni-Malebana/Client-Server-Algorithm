@@ -48,7 +48,7 @@ public class Client{
 			 * Make more efficient by reading more than one character 
 			 * at a time
 			 */
-		
+
 			/* 
 			 * Instantiate an object that is of BufferedRead/Writer 
 			 * type.It will take input/output stream as an argument.

@@ -46,7 +46,7 @@ public class Client{
 		
 			/* 
 			 * Make more efficient by reading more than one character 
-			 * at a time
+			 * at a time.
 			 */
 
 			/* 

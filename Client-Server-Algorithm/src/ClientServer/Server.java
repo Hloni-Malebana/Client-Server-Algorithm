@@ -38,7 +38,8 @@ public class Server{
 		try {
 			
 			/*
-			 * call the serverSocket method accept,which will setup the connection with the client.
+			 * call the serverSocket method accept,
+			 * which will setup the connection with the client.
 			 */
 			
 			socket = serverSocket.accept();

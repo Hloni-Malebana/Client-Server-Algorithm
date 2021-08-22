@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.sql.Time;
+import java.util.Date;
 import java.util.Scanner;
 //Client Server Algorithm
 public class Client{
@@ -77,6 +79,7 @@ public class Client{
 				 * socket object.
 				 */
 			
+				
 				bufferedWriter.write(msgtoSend);
 			
 				/*
@@ -100,9 +103,10 @@ public class Client{
 				 * Read the message entered by the server and enter
 				 * and print it to the screen on the client pc.
 				 */
+				Date date = new Date();
 				
 				System.out.println("Server :"+bufferedReader.readLine());				
-							
+				System.out.println(date);			
 				/* 
 				 * If the msgtoSend is BYE,break the loop.
 				 * this applies whether the string is in upper

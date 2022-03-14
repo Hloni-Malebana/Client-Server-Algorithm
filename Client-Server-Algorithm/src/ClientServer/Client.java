@@ -63,7 +63,7 @@ public class Client{
 		
 			/* 
 			 * while loop will run infinitely,it will break only if 
-			 * msgsToSend is BYE.
+			 * msgsToSend is BYE.This is called an infinite loop.
 			 */
 		
 			while(true) {
